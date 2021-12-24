@@ -1,6 +1,13 @@
-# Getting Started with Create React App
+# Bear Sighter
+Interactive Google Map application built with [Create React App](https://github.com/facebook/create-react-app) for the purpose of posting bear sightings in popular hiking areas.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Hosted on 
+
+## Key Node Packages Used
+- React v.17.0.2
+- Google Maps API
+- Google Places API
+- Google Javascript Map
 
 ## Available Scripts
 
@@ -39,32 +46,24 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## User Stories
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### User Story 1:
+As a user, I want to find a location by searching it.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+Given the user has loaded the application
+When they begin typing in a location in the search bar
+The application will begin suggesting map locations
+And the user can change their current position on the map
+```
 
-### Code Splitting
+### User Story 2:
+As a user, I want to be able to mark down a bear sighting.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+Given the user has the map selected for their preferred location
+When they user clicks a location on the map
+Then the application will register a bear sighting
+And a bear marker will appear at that location with the time/date of the sighting
+```
