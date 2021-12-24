@@ -5,9 +5,15 @@ Interactive Google Map application built with [Create React App](https://github.
 
 ## Key Node Packages Used
 - React v.17.0.2
-- Google Maps API
-- Google Places API
-- Google Javascript Map
+- use-places-autocomplete v. 1.11.0
+- react-googlemaps/api v. 2.7.0
+- date-fns v. 2.27.0
+- reach/combobox v. 0.16.5
+
+## Google APIs Used
+- Maps Javascript API
+- Places API
+- Geocoding API
 
 ## Available Scripts
 
