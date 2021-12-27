@@ -73,3 +73,6 @@ When they user clicks a location on the map
 Then the application will register a bear sighting
 And a bear marker will appear at that location with the time/date of the sighting
 ```
+
+## Snazzy Maps 
+Snazzy Maps is a great tool to customize and build Google maps visuals, for this project, I modified the style [Blue Essence](https://snazzymaps.com/style/61/blue-essence) to suit my design.
