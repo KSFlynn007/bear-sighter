@@ -1,7 +1,8 @@
 # Bear Sighter
 Interactive Google Map application built with [Create React App](https://github.com/facebook/create-react-app) for the purpose of posting bear sightings in popular hiking areas.
 
-## Hosted on 
+## Hosted on Heroku
+See live application [here](https://bear-sighter.herokuapp.com/)
 
 ## Key Node Packages Used
 - React v.17.0.2
