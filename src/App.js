@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import mapStyles from './mapStyles';
 
-import React, { useState } from 'react';
+import React, { useCallback, useState, useRef } from 'react';
 import {
   GoogleMap,
   useLoadScript,
@@ -48,6 +48,38 @@ function App() {
   });
 
   const [markers, setMarkers] = useState([])
+  // useCallback hook best for anytime you want to find a function that shouldn't ever change unless the props passed in depth array [] change
+  // if you do nothing, this function will retain same value, not triggering re-render
+  // using this instead of original below, which works but causes a re-render every time
+  /* 
+      onClick={(event) => {
+      setMarkers(current => 
+        [...current,
+          {
+            lat: event.latLng.lat(),
+            lng: event.latLng.lng(), 
+            time: new Date()
+          }
+        ]
+      )
+      }}
+  */
+  const onMapClick = React.useCallback((event) => {
+    setMarkers((current) => 
+      [...current,
+        {
+          lat: event.latLng.lat(),
+          lng: event.latLng.lng(), 
+          time: new Date()
+        }
+      ]);
+  }, []);
+
+  // useRef allows you to change state without causing a re-render
+  const mapRef = React.useRef();
+  const onMapLoad = React.useCallback((map) => {
+    mapRef.current = map;
+  }, []);
 
   if (loadError) return "Error loading maps";
   if (!isLoaded) return "Loading Maps";
@@ -62,17 +94,8 @@ function App() {
         zoom={10}
         center={center}
         options={options}
-        onClick={(event) => {
-          setMarkers(current => 
-            [...current,
-              {
-                lat: event.latLng.lat(),
-                lng: event.latLng.lng(), 
-                time: new Date()
-              }
-            ]
-          )
-        }}
+        onClick={onMapClick}
+        onLoad={onMapLoad}
       >
 
         {markers.map(marker => 
