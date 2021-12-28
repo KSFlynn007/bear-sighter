@@ -66,6 +66,16 @@ And the user can change their current position on the map
 ```
 
 ### User Story 2:
+As a user, I want to find my current location. 
+
+```
+Given the user has loaded the application
+When the user clicks the compass icon in the corner
+And the user allows the browser to allow geolocation
+Then the map will move and zoom to the user's current location
+```
+
+### User Story 3:
 As a user, I want to be able to mark down a bear sighting.
 
 ```
@@ -73,6 +83,16 @@ Given the user has the map selected for their preferred location
 When they user clicks a location on the map
 Then the application will register a bear sighting
 And a bear marker will appear at that location with the time/date of the sighting
+```
+
+### User Story 4:
+As a user, I want to see other bear sightings previously marked.
+
+```
+Given the user has loaded the app
+And other bear sightings are visible on the map
+When the user clicks on a bear icon
+Then a popup will appear that shows the time that bear was spotted
 ```
 
 ## Snazzy Maps 
