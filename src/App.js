@@ -1,8 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 import mapStyles from './mapStyles';
 
-import React, { useCallback, useState, useRef } from 'react';
+import React, { useState } from 'react';
 import {
   GoogleMap,
   useLoadScript,
@@ -47,7 +46,8 @@ function App() {
     libraries : libraries
   });
 
-  const [markers, setMarkers] = useState([])
+  const [markers, setMarkers] = useState([]);
+  const [selected, setSelected] = useState(null);
   // useCallback hook best for anytime you want to find a function that shouldn't ever change unless the props passed in depth array [] change
   // if you do nothing, this function will retain same value, not triggering re-render
   // using this instead of original below, which works but causes a re-render every time
@@ -110,10 +110,27 @@ function App() {
               origin: new window.google.maps.Point(0, 0),
               anchor: new window.google.maps.Point(15, 15)
             }}
+            onClick={() => {
+              setSelected(marker);
+            }}
           />
         )}
 
-
+        {/* InfoWindow is that pop up in google maps, takes one child */}
+        {selected ? (
+          <InfoWindow 
+          position={{lat: selected.lat, lng: selected.lng}}
+          // on closeClick prop needed to reset the state to null, otherwise, user can only open the info window box once
+          onCloseClick={() => {
+            setSelected(null);
+          }}
+          >
+            <div>
+              <h2>Bear Spotted</h2>
+              <p>Spotted {formatRelative(selected.time, new Date())}</p>
+            </div>
+          </InfoWindow>
+        ) : null}
 
         </GoogleMap>
     </div>
