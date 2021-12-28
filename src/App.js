@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import mapStyles from './mapStyles';
 
-import React from 'react';
+import React, { useState } from 'react';
 import {
   GoogleMap,
   useLoadScript,
@@ -47,6 +47,8 @@ function App() {
     libraries : libraries
   });
 
+  const [markers, setMarkers] = useState([])
+
   if (loadError) return "Error loading maps";
   if (!isLoaded) return "Loading Maps";
 
@@ -60,7 +62,38 @@ function App() {
         zoom={10}
         center={center}
         options={options}
-        ></GoogleMap>
+        onClick={(event) => {
+          setMarkers(current => 
+            [...current,
+              {
+                lat: event.latLng.lat(),
+                lng: event.latLng.lng(), 
+                time: new Date()
+              }
+            ]
+          )
+        }}
+      >
+
+        {markers.map(marker => 
+          <Marker 
+            key={marker.time.toISOString()}
+            position={{ lat: marker.lat, lng: marker.lng }}
+            icon={{
+              url: '/bear.svg',
+              // scaledSize is in pix unit
+              scaledSize: new window.google.maps.Size(30, 30),
+              // origin and anchor are to make sure that the bear icon shows up exactly where the user's mouse/finger click is, rather than above it
+              origin: new window.google.maps.Point(0, 0),
+              anchor: new window.google.maps.Point(15, 15)
+              
+            }}
+          />
+        )}
+
+
+
+        </GoogleMap>
     </div>
   );
 }
