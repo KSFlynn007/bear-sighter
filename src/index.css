@@ -30,9 +30,8 @@ h1{
 .search{
   position: absolute;
   top: 1rem;
-  left: 50%;
+  left: 60%;
   transform: translateX(-50%);
-  width: 100%;
   max-width: 400px;
   z-index: 10;
 }
@@ -68,4 +67,30 @@ h1{
 .locate img{
   width: 30px;
   cursor: pointer;
+}
+
+@media all and (max-width: 700px){
+  h1{
+    margin: -5px 0;
+  }
+  .search {
+    left: 65%;
+  }
+  .search input {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
+
+@media all and (max-width: 550px) {
+ .search{
+   top: 4rem;
+   left: 30%;
+ }
+}
+
+@media all and (max-width: 400px) {
+  .search {
+    left: 36%;
+  }
 }
