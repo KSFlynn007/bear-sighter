@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import mapStyles from './mapStyles';
 
 import React from 'react';
 import {
@@ -34,6 +35,11 @@ const center = {
   lat: 51.180202,
   lng: -115.565704
 }
+const options = {
+  styles: mapStyles,
+  disableDefaultUI: true,
+  zoomControl: true
+}
 
 function App() {
   const {isLoaded, loadError} = useLoadScript({
@@ -46,10 +52,14 @@ function App() {
 
   return (
     <div>
+      <h1>Bear Sighter{" "}
+        <span role="img" aria-label="tent">🏕</span>
+      </h1>
       <GoogleMap 
         mapContainerStyle={mapContainerStyle}
-        zoom={9}
+        zoom={10}
         center={center}
+        options={options}
         ></GoogleMap>
     </div>
   );
