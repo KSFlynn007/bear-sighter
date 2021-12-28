@@ -76,3 +76,6 @@ And a bear marker will appear at that location with the time/date of the sightin
 
 ## Snazzy Maps 
 Snazzy Maps is a great tool to customize and build Google maps visuals, for this project, I modified the style [Blue Essence](https://snazzymaps.com/style/61/blue-essence) to suit my design.
+
+## Icon
+Original bear PNG icon from [Freepik](https://www.flaticon.com/)
