@@ -109,7 +109,6 @@ function App() {
               // origin and anchor are to make sure that the bear icon shows up exactly where the user's mouse/finger click is, rather than above it
               origin: new window.google.maps.Point(0, 0),
               anchor: new window.google.maps.Point(15, 15)
-              
             }}
           />
         )}
