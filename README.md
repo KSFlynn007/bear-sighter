@@ -10,10 +10,11 @@ Interactive Google Map application built with [Create React App](https://github.
 - date-fns v. 2.27.0
 - reach/combobox v. 0.16.5
 
-## Google APIs Used
-- Maps Javascript API
-- Places API
-- Geocoding API
+## Key APIs Used
+- Google Maps Javascript API
+- Google Places API
+- Google Geocoding API
+- Geolocation API ([browser built-in](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API))
 
 ## Available Scripts
 
